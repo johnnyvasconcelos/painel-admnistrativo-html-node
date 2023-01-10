@@ -1,0 +1,269 @@
+/********** fonts **********/
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* raíz */
+
+:root {
+    --color-1: #f32268;
+    --color-2: #f3c222;
+    --color-3: #947171;
+    --dark: #181617;
+    --dark-black: #131112;
+    --white: #f0f0f0;
+    --gray: #b8b8b823;
+    --light-gray: #b19ea1;
+    --font: 'Open Sans', sans-serif;
+    --display: 'Roboto Slab', sans-serif;
+    --text: 'Roboto', sans-serif;
+}
+
+/********** configurações globais **********/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--text);
+}
+
+body {
+    background-color: var(--white);
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+.contentor {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 90%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/********** painel **********/
+
+.painel {
+    min-height: 100vh;
+}
+
+.painel .body {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.painel .body .aside {
+    height: 100vh;
+    width: 20%;
+    overflow-x: auto;
+    background-color: var(--dark);
+    border-bottom: 3px solid var(--color-1);
+    border-right: 2px solid var(--gray);
+}
+
+.painel .body .aside::-webkit-scrollbar {
+    display: none;
+}
+
+.painel .body .aside .content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.painel .body .aside .content .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    height: 4em;
+    color: var(--white);
+}
+
+.painel .body .aside .content .logo span {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 1.2em;
+}
+
+.painel .body .aside .content .category {
+    border-bottom: 1px dashed var(--gray);
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    width: 90%;
+    text-indent: 15px;
+    padding-bottom: 10px;
+    margin: 15px auto 5px auto;
+    color: #b8b8b86c;
+}
+
+.painel .body .aside .content .item {
+    cursor: pointer;
+    height: 3.2em;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.painel .body .aside .content .item:hover span, .painel .body .aside .content .item:hover .icon, .painel .body .aside .content .item:hover .arrow, .painel .body .aside .content .item:hover a {
+    color: var(--white);
+}
+
+.painel .body .aside .content .item > div {
+    display: flex;
+    align-items: center;
+}
+
+.painel .body .aside .content .item > .arrow {
+    transition: 0.4s;
+    font-size: 0.7em;
+    color: var(--gray);
+}
+
+.painel .body .aside .content .item .icon {
+    transition: 0.4s;
+    width: 20px;
+    margin-right: 1em;
+    font-size: 1.2em;
+    color: var(--color-3);
+}
+
+.painel .body .aside .content .item.active .icon {
+    color: var(--white);
+}
+
+.painel .body .aside .content .item span {
+    text-transform: lowercase;
+    transition: 0.4s;
+    font-size: 1em;
+    color: var(--light-gray);
+}
+
+.painel .body .aside .content .item span a {
+    color: var(--light-gray);
+}
+
+.painel .body .aside .content .item.active span a {
+    color: var(--white);
+}
+
+.painel .body .aside .content .sub-item {
+    height: 0px;
+    overflow: hidden;
+    width: 70%;
+    margin: auto;
+}
+
+.painel .body .aside .content .sub-item a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: #e9d5d58e;
+    display: block;
+    margin: 15px 0;
+}
+
+.painel .body .aside .content .sub-item a:hover {
+    color: var(--white);
+}
+
+.painel .body .aside .content .sub-item a::before {
+    content: '-';
+    margin-right: 27px;
+}
+
+.painel .body .content-area {
+    height: 100%;
+    width: 80%;
+    background-color: var(--light-gray);
+}
+
+.painel .body .content-area .top-bar .contentor {
+    height: 50px;
+    position: relative;
+    align-items: center;
+}
+
+.painel .body .content-area .top-bar .contentor h1 {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.painel .body .content-area .top-bar .contentor .menuMobile {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 33%;
+    height: 40px;
+    width: 40px;
+    font-size: 24px;
+    transform: rotate(90deg);
+}
+
+/********** responsividade **********/
+/* min */
+
+@media (min-width: 1200px) {
+    .contentor {
+        max-width: 1000px;
+    }
+}
+
+/* max */
+
+@media (max-width: 1100px) {
+    .painel .body .aside {
+        transition: 0.3s all ease-in-out;
+        width: 0%;
+        transform: translateX(-100%);
+    }
+    .painel .body .aside.asideShow {
+        width: 100%!important;
+        transform: translateX(0%)!important;
+    }
+    .painel .body .content-area {
+        width: 100%;
+    }
+    .painel .body .content-area {
+        height: 100%;
+        width: 100%;
+    }
+    .painel .body .content-area .top-bar .contentor .menuMobile {
+        display: block;
+    }
+}
+
+@media (max-width: 365px) {
+    .painel .body .aside .content .item .icon {
+        margin-right: 0.5em;
+    }
+}
